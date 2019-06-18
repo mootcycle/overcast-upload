@@ -1,6 +1,7 @@
 {
   "WFWorkflowClientVersion": "784",
   "WFWorkflowClientRelease": "2.2.1",
+  "WFWorkflowMinimumClientVersion": 411,
   "WFWorkflowIcon": {
     "WFWorkflowIconStartColor": -23508481,
     "WFWorkflowIconImageData": {
@@ -13,21 +14,546 @@
     {
       "ParameterKey": "WFTextActionText",
       "Category": "Parameter",
-      "ActionIndex": 10,
+      "ActionIndex": 60,
       "Text": "Enter your overcast.fm email address."
     },
     {
       "ParameterKey": "WFTextActionText",
       "Category": "Parameter",
-      "ActionIndex": 12,
-      "Text": "Enter your overcast.fm password"
+      "ActionIndex": 62,
+      "Text": "Enter your overcast.fm password."
     }
   ],
+  "WFWorkflowTypes": [
+    "WatchKit",
+    "ActionExtension"
+  ],
+  "WFWorkflowInputContentItemClasses": [
+    "WFAVAssetContentItem",
+    "WFURLContentItem"
+  ],
   "WFWorkflowActions": [
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
+      "WFWorkflowActionParameters": {
+        "WFCommentActionText": "Overcast Upload v3 - https://github.com/mootcycle/overcast-upload"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariableName": "input"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getitemtype",
+      "WFWorkflowActionParameters": {
+        "UUID": "79883EE2-6C33-4FAA-863C-7170B77F5D33"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFControlFlowMode": 0,
+        "WFConditionalActionString": "URL",
+        "GroupingIdentifier": "3D368FB9-F88B-451F-854F-6392AFC16DEB",
+        "WFCondition": "Equals"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.comment",
+      "WFWorkflowActionParameters": {
+        "WFCommentActionText": "This part of the shortcut is based on the \"YouTube Audio to Overcast\" Shortcut shared here:\nhttps://talk.automators.fm/t/youtube-audio-to-overcast/2175\n\nThanks!"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "input",
+            "Type": "Variable",
+            "Aggrandizements": [
+              {
+                "Type": "WFCoercionVariableAggrandizement",
+                "CoercionItemClass": "WFURLContentItem"
+              }
+            ]
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFControlFlowMode": 0,
+        "WFConditionalActionString": "youtube.com",
+        "GroupingIdentifier": "4477C8BA-92A1-4BCD-A690-4773D6C0A75E",
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionary",
+            "Type": "Variable",
+            "VariableUUID": "9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.geturlcomponent",
+      "WFWorkflowActionParameters": {
+        "WFURLComponent": "Query",
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionaries",
+            "Type": "Variable",
+            "VariableUUID": "4914C520-5F5A-433D-B26B-B40432E5A7CC"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "UUID": "E89BBDAF-26BD-4268-9454-A09FA4A38EC6"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.detect.dictionary",
+      "WFWorkflowActionParameters": {
+        "UUID": "2F5F0338-55BB-460C-876B-DD9AC990FFF4"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvalueforkey",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionaries",
+            "Type": "Variable",
+            "VariableUUID": "4914C520-5F5A-433D-B26B-B40432E5A7CC"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "UUID": "D1EBF0A9-50E8-4BC1-84E1-833DF372EACB",
+        "WFDictionaryKey": "v"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.url",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionaries",
+            "Type": "Variable",
+            "VariableUUID": "4914C520-5F5A-433D-B26B-B40432E5A7CC"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFURLActionURL": {
+          "Value": {
+            "string": "http://youtube.com/get_video_info?video_id=￼&el=detailpage&ps=default&eurl=&gl=US&hl=en",
+            "attachmentsByRange": {
+              "{43, 1}": {
+                "Type": "Input",
+                "VariableUUID": "00000000-0000-0000-0000-000000000000"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "UUID": "70024645-407C-47BE-9C2E-DF9DB1268982"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.downloadurl",
+      "WFWorkflowActionParameters": {
+        "ShowHeaders": false,
+        "Advanced": false,
+        "UUID": "0688280B-6C2A-4DB6-B134-51AEBB36D192"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariableName": "Video info"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvalueforkey",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionaries",
+            "Type": "Variable",
+            "VariableUUID": "4914C520-5F5A-433D-B26B-B40432E5A7CC"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFDictionaryKey": "url_encoded_fmt_stream_map"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.text.split",
+      "WFWorkflowActionParameters": {
+        "WFTextSeparator": "Custom",
+        "WFTextCustomSeparator": ",",
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionaries",
+            "Type": "Variable",
+            "VariableUUID": "4914C520-5F5A-433D-B26B-B40432E5A7CC"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.repeat.each",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "58E0BDE6-1DBE-4EE4-B239-E425351FE249",
+        "WFControlFlowMode": 0
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.detect.dictionary",
+      "WFWorkflowActionParameters": {}
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.repeat.each",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "58E0BDE6-1DBE-4EE4-B239-E425351FE249",
+        "WFControlFlowMode": 2
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionaries",
+            "Type": "Variable",
+            "VariableUUID": "4914C520-5F5A-433D-B26B-B40432E5A7CC"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "Stream Dictionaries"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.list",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionary",
+            "Type": "Variable",
+            "VariableUUID": "9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFItems": [
+          "22",
+          "18",
+          "34",
+          "35"
+        ]
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.repeat.each",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "ADE6832C-A542-492C-9A43-150AA191E560",
+        "WFControlFlowMode": 0
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionary",
+            "Type": "Variable",
+            "VariableUUID": "9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "Video Format"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Video info",
+            "Type": "Variable"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvalueforkey",
+      "WFWorkflowActionParameters": {
+        "WFDictionaryKey": "title"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.text.replace",
+      "WFWorkflowActionParameters": {
+        "WFReplaceTextReplace": " ",
+        "WFReplaceTextCaseSensitive": false,
+        "WFReplaceTextFind": "+"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariableName": "youTubeFileName"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionaries",
+            "Type": "Variable",
+            "VariableUUID": "4914C520-5F5A-433D-B26B-B40432E5A7CC"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.repeat.each",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "BD7D990F-684D-48C6-BABD-203C51F446DC",
+        "WFControlFlowMode": 0
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionary",
+            "Type": "Variable",
+            "VariableUUID": "9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFVariableName": "Stream Dictionary"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvalueforkey",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionary",
+            "Type": "Variable",
+            "VariableUUID": "9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        },
+        "WFDictionaryKey": "itag"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFConditionalActionString": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "VariableName": "Video Format",
+                "Type": "Variable",
+                "VariableUUID": "1C82E7C8-EF1E-4776-A37A-E87AAA624BB8"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "GroupingIdentifier": "E794FAF8-D3D1-4218-8610-8A8AD164B77A",
+        "WFControlFlowMode": 0
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "Stream Dictionary",
+            "Type": "Variable",
+            "VariableUUID": "9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434"
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvalueforkey",
+      "WFWorkflowActionParameters": {
+        "WFDictionaryKey": "url",
+        "UUID": "45426DFE-5B91-4DCE-BB2E-B5980C5C8619"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "E794FAF8-D3D1-4218-8610-8A8AD164B77A",
+        "WFControlFlowMode": 1
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.nothing",
+      "WFWorkflowActionParameters": {}
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "WFControlFlowMode": 2,
+        "GroupingIdentifier": "E794FAF8-D3D1-4218-8610-8A8AD164B77A",
+        "UUID": "49C984C0-26A5-4E4F-A806-8F14D5563D6D"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.repeat.each",
+      "WFWorkflowActionParameters": {
+        "UUID": "54AAA388-07F6-42F7-AEAA-C72BB7296471",
+        "GroupingIdentifier": "BD7D990F-684D-48C6-BABD-203C51F446DC",
+        "WFControlFlowMode": 2
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.repeat.each",
+      "WFWorkflowActionParameters": {
+        "WFControlFlowMode": 2,
+        "GroupingIdentifier": "ADE6832C-A542-492C-9A43-150AA191E560",
+        "UUID": "0BB3DDBC-0CF4-46A3-B93D-071E73A5DDD5"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getitemfromlist",
+      "WFWorkflowActionParameters": {
+        "WFItemSpecifier": "First Item",
+        "WFItemIndex": "",
+        "UUID": "9FBBD67F-D9B2-46F7-8CEF-E07E2C4A2885"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.downloadurl",
+      "WFWorkflowActionParameters": {
+        "UUID": "BD736B7F-63CC-4C9B-8FFC-E577717009A7"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.encodemedia",
+      "WFWorkflowActionParameters": {
+        "WFMediaAudioOnly": true,
+        "UUID": "67185780-F2D9-43D8-9D65-BF905164DB22",
+        "Metadata": false,
+        "WFMetadataTitle": ""
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setitemname",
+      "WFWorkflowActionParameters": {
+        "WFName": {
+          "Value": {
+            "string": "￼",
+            "attachmentsByRange": {
+              "{0, 1}": {
+                "VariableName": "youTubeFileName",
+                "Type": "Variable"
+              }
+            }
+          },
+          "WFSerializationType": "WFTextTokenString"
+        },
+        "UUID": "D0AE8766-5A75-4181-9FF6-2816801C6504"
+      }
+    },
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
       "WFWorkflowActionParameters": {
         "WFVariableName": "files"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "4477C8BA-92A1-4BCD-A690-4773D6C0A75E",
+        "WFControlFlowMode": 1
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "input",
+            "Type": "Variable",
+            "Aggrandizements": [
+              {
+                "Type": "WFCoercionVariableAggrandizement",
+                "CoercionItemClass": "WFGenericFileContentItem"
+              }
+            ]
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariableName": "files"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "UUID": "EDD6FC82-7D1D-4B66-A656-6EA533F089E3",
+        "GroupingIdentifier": "4477C8BA-92A1-4BCD-A690-4773D6C0A75E",
+        "WFControlFlowMode": 2
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "3D368FB9-F88B-451F-854F-6392AFC16DEB",
+        "WFControlFlowMode": 1
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.getvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariable": {
+          "Value": {
+            "VariableName": "input",
+            "Type": "Variable",
+            "Aggrandizements": [
+              {
+                "Type": "WFCoercionVariableAggrandizement",
+                "CoercionItemClass": "WFGenericFileContentItem"
+              }
+            ]
+          },
+          "WFSerializationType": "WFTextTokenAttachment"
+        }
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.setvariable",
+      "WFWorkflowActionParameters": {
+        "WFVariableName": "files"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.conditional",
+      "WFWorkflowActionParameters": {
+        "GroupingIdentifier": "3D368FB9-F88B-451F-854F-6392AFC16DEB",
+        "WFControlFlowMode": 2
       }
     },
     {
@@ -55,9 +581,9 @@
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.documentpicker.open",
       "WFWorkflowActionParameters": {
-        "SelectMultiple": true,
+        "UUID": "FEA99FFE-D73F-4D03-AD61-3B9931E13071",
         "WFFileStorageService": "iCloud Drive",
-        "UUID": "FEA99FFE-D73F-4D03-AD61-3B9931E13071"
+        "SelectMultiple": true
       }
     },
     {
@@ -97,7 +623,8 @@
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.gettext",
       "WFWorkflowActionParameters": {
-        "WFTextActionText": "someone@example.com"
+        "WFTextActionText": "me@example.com",
+        "UUID": "95C95D4B-8351-41B4-846D-EBE5FD26B869"
       }
     },
     {
@@ -248,7 +775,6 @@
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.ask",
       "WFWorkflowActionParameters": {
-        "WFAskActionPrompt": "What should this upload be named?",
         "WFAskActionDefaultAnswer": {
           "Value": {
             "string": "￼",
@@ -260,7 +786,17 @@
             }
           },
           "WFSerializationType": "WFTextTokenString"
-        }
+        },
+        "WFAskActionPrompt": "What should this upload be named?"
+      }
+    },
+    {
+      "WFWorkflowActionIdentifier": "is.workflow.actions.text.replace",
+      "WFWorkflowActionParameters": {
+        "WFReplaceTextRegularExpression": true,
+        "WFReplaceTextReplace": "",
+        "WFReplaceTextCaseSensitive": false,
+        "WFReplaceTextFind": "\\n"
       }
     },
     {
@@ -423,7 +959,7 @@
     {
       "WFWorkflowActionIdentifier": "is.workflow.actions.alert",
       "WFWorkflowActionParameters": {
-        "WFAlertActionMessage": "I couldn't fetch the uploads page. Is your email and password correct?",
+        "WFAlertActionMessage": "I couldn't fetch the uploads page. Check and make sure your overcast.fm email and password are correct.",
         "WFAlertActionTitle": "There's a problem!",
         "WFAlertActionCancelButtonShown": false
       }
@@ -514,16 +1050,16 @@
           "Value": {
             "string": "￼￼.￼",
             "attachmentsByRange": {
-              "{3, 1}": {
-                "VariableName": "fileExtension",
+              "{0, 1}": {
+                "VariableName": "fileKey",
                 "Type": "Variable"
               },
               "{1, 1}": {
                 "VariableName": "fileName",
                 "Type": "Variable"
               },
-              "{0, 1}": {
-                "VariableName": "fileKey",
+              "{3, 1}": {
+                "VariableName": "fileExtension",
                 "Type": "Variable"
               }
             }
@@ -771,12 +1307,5 @@
         "WFControlFlowMode": 2
       }
     }
-  ],
-  "WFWorkflowTypes": [
-    "WatchKit",
-    "ActionExtension"
-  ],
-  "WFWorkflowInputContentItemClasses": [
-    "WFAVAssetContentItem"
   ]
 }

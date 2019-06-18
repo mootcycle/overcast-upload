@@ -6,11 +6,840 @@
 	<array>
 		<dict>
 			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.comment</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFCommentActionText</key>
+				<string>Overcast Upload v3 - https://github.com/mootcycle/overcast-upload</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.setvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariableName</key>
+				<string>input</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getitemtype</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>79883EE2-6C33-4FAA-863C-7170B77F5D33</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.conditional</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>3D368FB9-F88B-451F-854F-6392AFC16DEB</string>
+				<key>WFCondition</key>
+				<string>Equals</string>
+				<key>WFConditionalActionString</key>
+				<string>URL</string>
+				<key>WFControlFlowMode</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.comment</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFCommentActionText</key>
+				<string>This part of the shortcut is based on the "YouTube Audio to Overcast" Shortcut shared here:
+https://talk.automators.fm/t/youtube-audio-to-overcast/2175
+
+Thanks!</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Aggrandizements</key>
+						<array>
+							<dict>
+								<key>CoercionItemClass</key>
+								<string>WFURLContentItem</string>
+								<key>Type</key>
+								<string>WFCoercionVariableAggrandizement</string>
+							</dict>
+						</array>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>input</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.conditional</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>4477C8BA-92A1-4BCD-A690-4773D6C0A75E</string>
+				<key>WFConditionalActionString</key>
+				<string>youtube.com</string>
+				<key>WFControlFlowMode</key>
+				<integer>0</integer>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionary</string>
+						<key>VariableUUID</key>
+						<string>9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.geturlcomponent</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>E89BBDAF-26BD-4268-9454-A09FA4A38EC6</string>
+				<key>WFURLComponent</key>
+				<string>Query</string>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionaries</string>
+						<key>VariableUUID</key>
+						<string>4914C520-5F5A-433D-B26B-B40432E5A7CC</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.detect.dictionary</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>2F5F0338-55BB-460C-876B-DD9AC990FFF4</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvalueforkey</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>D1EBF0A9-50E8-4BC1-84E1-833DF372EACB</string>
+				<key>WFDictionaryKey</key>
+				<string>v</string>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionaries</string>
+						<key>VariableUUID</key>
+						<string>4914C520-5F5A-433D-B26B-B40432E5A7CC</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.url</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>70024645-407C-47BE-9C2E-DF9DB1268982</string>
+				<key>WFURLActionURL</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>attachmentsByRange</key>
+						<dict>
+							<key>{43, 1}</key>
+							<dict>
+								<key>Type</key>
+								<string>Input</string>
+								<key>VariableUUID</key>
+								<string>00000000-0000-0000-0000-000000000000</string>
+							</dict>
+						</dict>
+						<key>string</key>
+						<string>http://youtube.com/get_video_info?video_id=￼&amp;el=detailpage&amp;ps=default&amp;eurl=&amp;gl=US&amp;hl=en</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenString</string>
+				</dict>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionaries</string>
+						<key>VariableUUID</key>
+						<string>4914C520-5F5A-433D-B26B-B40432E5A7CC</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.downloadurl</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>Advanced</key>
+				<false/>
+				<key>ShowHeaders</key>
+				<false/>
+				<key>UUID</key>
+				<string>0688280B-6C2A-4DB6-B134-51AEBB36D192</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.setvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariableName</key>
+				<string>Video info</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvalueforkey</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFDictionaryKey</key>
+				<string>url_encoded_fmt_stream_map</string>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionaries</string>
+						<key>VariableUUID</key>
+						<string>4914C520-5F5A-433D-B26B-B40432E5A7CC</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.text.split</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFTextCustomSeparator</key>
+				<string>,</string>
+				<key>WFTextSeparator</key>
+				<string>Custom</string>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionaries</string>
+						<key>VariableUUID</key>
+						<string>4914C520-5F5A-433D-B26B-B40432E5A7CC</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.repeat.each</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>58E0BDE6-1DBE-4EE4-B239-E425351FE249</string>
+				<key>WFControlFlowMode</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.detect.dictionary</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict/>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.repeat.each</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>58E0BDE6-1DBE-4EE4-B239-E425351FE249</string>
+				<key>WFControlFlowMode</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.setvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionaries</string>
+						<key>VariableUUID</key>
+						<string>4914C520-5F5A-433D-B26B-B40432E5A7CC</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+				<key>WFVariableName</key>
+				<string>Stream Dictionaries</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.list</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFItems</key>
+				<array>
+					<string>22</string>
+					<string>18</string>
+					<string>34</string>
+					<string>35</string>
+				</array>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionary</string>
+						<key>VariableUUID</key>
+						<string>9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.repeat.each</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>ADE6832C-A542-492C-9A43-150AA191E560</string>
+				<key>WFControlFlowMode</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.setvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionary</string>
+						<key>VariableUUID</key>
+						<string>9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+				<key>WFVariableName</key>
+				<string>Video Format</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Video info</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvalueforkey</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFDictionaryKey</key>
+				<string>title</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.text.replace</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFReplaceTextCaseSensitive</key>
+				<false/>
+				<key>WFReplaceTextFind</key>
+				<string>+</string>
+				<key>WFReplaceTextReplace</key>
+				<string> </string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.setvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariableName</key>
+				<string>youTubeFileName</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionaries</string>
+						<key>VariableUUID</key>
+						<string>4914C520-5F5A-433D-B26B-B40432E5A7CC</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.repeat.each</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>BD7D990F-684D-48C6-BABD-203C51F446DC</string>
+				<key>WFControlFlowMode</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.setvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionary</string>
+						<key>VariableUUID</key>
+						<string>9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+				<key>WFVariableName</key>
+				<string>Stream Dictionary</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvalueforkey</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFDictionaryKey</key>
+				<string>itag</string>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionary</string>
+						<key>VariableUUID</key>
+						<string>9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.conditional</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>E794FAF8-D3D1-4218-8610-8A8AD164B77A</string>
+				<key>WFConditionalActionString</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>attachmentsByRange</key>
+						<dict>
+							<key>{0, 1}</key>
+							<dict>
+								<key>Type</key>
+								<string>Variable</string>
+								<key>VariableName</key>
+								<string>Video Format</string>
+								<key>VariableUUID</key>
+								<string>1C82E7C8-EF1E-4776-A37A-E87AAA624BB8</string>
+							</dict>
+						</dict>
+						<key>string</key>
+						<string>￼</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenString</string>
+				</dict>
+				<key>WFControlFlowMode</key>
+				<integer>0</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>Stream Dictionary</string>
+						<key>VariableUUID</key>
+						<string>9BC2AFDF-82B9-47EE-9573-1B2B1D3D7434</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvalueforkey</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>45426DFE-5B91-4DCE-BB2E-B5980C5C8619</string>
+				<key>WFDictionaryKey</key>
+				<string>url</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.conditional</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>E794FAF8-D3D1-4218-8610-8A8AD164B77A</string>
+				<key>WFControlFlowMode</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.nothing</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict/>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.conditional</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>E794FAF8-D3D1-4218-8610-8A8AD164B77A</string>
+				<key>UUID</key>
+				<string>49C984C0-26A5-4E4F-A806-8F14D5563D6D</string>
+				<key>WFControlFlowMode</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.repeat.each</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>BD7D990F-684D-48C6-BABD-203C51F446DC</string>
+				<key>UUID</key>
+				<string>54AAA388-07F6-42F7-AEAA-C72BB7296471</string>
+				<key>WFControlFlowMode</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.repeat.each</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>ADE6832C-A542-492C-9A43-150AA191E560</string>
+				<key>UUID</key>
+				<string>0BB3DDBC-0CF4-46A3-B93D-071E73A5DDD5</string>
+				<key>WFControlFlowMode</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getitemfromlist</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>9FBBD67F-D9B2-46F7-8CEF-E07E2C4A2885</string>
+				<key>WFItemIndex</key>
+				<string></string>
+				<key>WFItemSpecifier</key>
+				<string>First Item</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.downloadurl</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>BD736B7F-63CC-4C9B-8FFC-E577717009A7</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.encodemedia</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>Metadata</key>
+				<false/>
+				<key>UUID</key>
+				<string>67185780-F2D9-43D8-9D65-BF905164DB22</string>
+				<key>WFMediaAudioOnly</key>
+				<true/>
+				<key>WFMetadataTitle</key>
+				<string></string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.setitemname</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>UUID</key>
+				<string>D0AE8766-5A75-4181-9FF6-2816801C6504</string>
+				<key>WFName</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>attachmentsByRange</key>
+						<dict>
+							<key>{0, 1}</key>
+							<dict>
+								<key>Type</key>
+								<string>Variable</string>
+								<key>VariableName</key>
+								<string>youTubeFileName</string>
+							</dict>
+						</dict>
+						<key>string</key>
+						<string>￼</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenString</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
 			<string>is.workflow.actions.setvariable</string>
 			<key>WFWorkflowActionParameters</key>
 			<dict>
 				<key>WFVariableName</key>
 				<string>files</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.conditional</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>4477C8BA-92A1-4BCD-A690-4773D6C0A75E</string>
+				<key>WFControlFlowMode</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Aggrandizements</key>
+						<array>
+							<dict>
+								<key>CoercionItemClass</key>
+								<string>WFGenericFileContentItem</string>
+								<key>Type</key>
+								<string>WFCoercionVariableAggrandizement</string>
+							</dict>
+						</array>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>input</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.setvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariableName</key>
+				<string>files</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.conditional</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>4477C8BA-92A1-4BCD-A690-4773D6C0A75E</string>
+				<key>UUID</key>
+				<string>EDD6FC82-7D1D-4B66-A656-6EA533F089E3</string>
+				<key>WFControlFlowMode</key>
+				<integer>2</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.conditional</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>3D368FB9-F88B-451F-854F-6392AFC16DEB</string>
+				<key>WFControlFlowMode</key>
+				<integer>1</integer>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.getvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariable</key>
+				<dict>
+					<key>Value</key>
+					<dict>
+						<key>Aggrandizements</key>
+						<array>
+							<dict>
+								<key>CoercionItemClass</key>
+								<string>WFGenericFileContentItem</string>
+								<key>Type</key>
+								<string>WFCoercionVariableAggrandizement</string>
+							</dict>
+						</array>
+						<key>Type</key>
+						<string>Variable</string>
+						<key>VariableName</key>
+						<string>input</string>
+					</dict>
+					<key>WFSerializationType</key>
+					<string>WFTextTokenAttachment</string>
+				</dict>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.setvariable</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFVariableName</key>
+				<string>files</string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.conditional</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>GroupingIdentifier</key>
+				<string>3D368FB9-F88B-451F-854F-6392AFC16DEB</string>
+				<key>WFControlFlowMode</key>
+				<integer>2</integer>
 			</dict>
 		</dict>
 		<dict>
@@ -119,8 +948,10 @@
 			<string>is.workflow.actions.gettext</string>
 			<key>WFWorkflowActionParameters</key>
 			<dict>
+				<key>UUID</key>
+				<string>95C95D4B-8351-41B4-846D-EBE5FD26B869</string>
 				<key>WFTextActionText</key>
-				<string>someone@example.com</string>
+				<string>me@example.com</string>
 			</dict>
 		</dict>
 		<dict>
@@ -385,6 +1216,21 @@
 		</dict>
 		<dict>
 			<key>WFWorkflowActionIdentifier</key>
+			<string>is.workflow.actions.text.replace</string>
+			<key>WFWorkflowActionParameters</key>
+			<dict>
+				<key>WFReplaceTextCaseSensitive</key>
+				<false/>
+				<key>WFReplaceTextFind</key>
+				<string>\n</string>
+				<key>WFReplaceTextRegularExpression</key>
+				<true/>
+				<key>WFReplaceTextReplace</key>
+				<string></string>
+			</dict>
+		</dict>
+		<dict>
+			<key>WFWorkflowActionIdentifier</key>
 			<string>is.workflow.actions.setvariable</string>
 			<key>WFWorkflowActionParameters</key>
 			<dict>
@@ -639,7 +1485,7 @@
 				<key>WFAlertActionCancelButtonShown</key>
 				<false/>
 				<key>WFAlertActionMessage</key>
-				<string>I couldn't fetch the uploads page. Is your email and password correct?</string>
+				<string>I couldn't fetch the uploads page. Check and make sure your overcast.fm email and password are correct.</string>
 				<key>WFAlertActionTitle</key>
 				<string>There's a problem!</string>
 			</dict>
@@ -1218,7 +2064,7 @@
 	<array>
 		<dict>
 			<key>ActionIndex</key>
-			<integer>10</integer>
+			<integer>60</integer>
 			<key>Category</key>
 			<string>Parameter</string>
 			<key>ParameterKey</key>
@@ -1228,19 +2074,22 @@
 		</dict>
 		<dict>
 			<key>ActionIndex</key>
-			<integer>12</integer>
+			<integer>62</integer>
 			<key>Category</key>
 			<string>Parameter</string>
 			<key>ParameterKey</key>
 			<string>WFTextActionText</string>
 			<key>Text</key>
-			<string>Enter your overcast.fm password</string>
+			<string>Enter your overcast.fm password.</string>
 		</dict>
 	</array>
 	<key>WFWorkflowInputContentItemClasses</key>
 	<array>
 		<string>WFAVAssetContentItem</string>
+		<string>WFURLContentItem</string>
 	</array>
+	<key>WFWorkflowMinimumClientVersion</key>
+	<integer>411</integer>
 	<key>WFWorkflowTypes</key>
 	<array>
 		<string>WatchKit</string>
