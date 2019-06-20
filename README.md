@@ -11,3 +11,5 @@ The shortcut supports:
 [Current version of the shortcut on iCloud.](https://www.icloud.com/shortcuts/49b978f815dc4258b9a0ba3c33a4e92f)
 
 Thanks to the [automators.fm](https://talk.automators.fm/t/youtube-audio-to-overcast/2175) forum for the YouTube audio conversion.
+
+I've also included a shell script which uses the same logic for local file uploads.
