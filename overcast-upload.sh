@@ -101,4 +101,6 @@ curl -Ls --compressed \
   > /dev/null \
   || exit 1
 
+rm overcast_cookies
+
 echo Done!
