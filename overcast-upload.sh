@@ -65,7 +65,7 @@ key=$(grep -o -E \
   's/data-key-prefix="//g' \
   )
 
-filename=$(basename $1)
+filename=$(basename "$1")
 
 if [[ -z "$policy" ]] \
   || [[ -z "$signature" ]] \
